@@ -1,0 +1,6 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" fill="#2d3748"/>
+  <circle cx="200" cy="150" r="80" fill="#a0aec0"/>
+  <path d="M200 250c-60 0-110 40-120 100h240c-10-60-60-100-120-100z" fill="#a0aec0"/>
+  <text x="200" y="380" font-family="Arial" font-size="24" text-anchor="middle" fill="#718096">Profile Placeholder</text>
+</svg>

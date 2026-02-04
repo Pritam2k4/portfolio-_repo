@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FiLinkedin, FiGithub, FiMail, FiDownload, FiPhone } from "react-icons/fi";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -14,7 +15,7 @@ const navLinks = [
 ];
 
 const socialLinks = [
-    { href: "https://linkedin.com/in/preetam-pujari", icon: FiLinkedin, label: "LinkedIn" },
+    { href: "https://linkedin.com/in/preetam-naik2k4", icon: FiLinkedin, label: "LinkedIn" },
     { href: "https://github.com/preetam-pujari", icon: FiGithub, label: "GitHub" },
     { href: "mailto:preetam.naik3@gmail.com", icon: FiMail, label: "Email" },
 ];
@@ -38,6 +39,15 @@ export function Sidebar() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
+                    <div className="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-2 border-accent/20">
+                        <Image
+                            src="/assets/images/profile.png"
+                            alt="Preetam Pujari"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
+                    </div>
                     <h1 className="text-3xl lg:text-4xl font-semibold text-foreground mb-2">
                         Preetam Pujari
                     </h1>
@@ -73,6 +83,20 @@ export function Sidebar() {
 
             {/* Footer */}
             <div className="mt-8 lg:mt-0">
+                {/* Weekly Thoughts / Blog Section */}
+                <div className="mb-6 p-4 bg-accent/5 border border-accent/10 rounded-xl">
+                    <h3 className="text-xs font-semibold text-accent uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                        Weekly Thoughts
+                    </h3>
+                    <div className="space-y-3">
+                        <div className="relative pl-3 border-l-2 border-muted-foreground/20">
+                            <p className="text-xs text-muted-foreground font-medium mb-1">"recetly i have been playing around with deepseek r1?"</p>
+                            <p className="text-sm text-foreground italic">"I'm quite impressed by its reasoning capabilities, especially compared to earlier open weights models. It feels like a genuine step forward for accessible AI."</p>
+                        </div>
+                    </div>
+                </div>
+
                 {/* Social Links */}
                 <div className="flex items-center gap-4 mb-6">
                     {socialLinks.map((link) => (

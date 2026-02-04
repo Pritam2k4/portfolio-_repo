@@ -1,0 +1,6 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#2d3748"/>
+  <circle cx="300" cy="180" r="80" stroke="#f6e05e" stroke-width="8" fill="none"/>
+  <path d="M300 180l40 40l-80 0z" fill="#f6e05e" opacity="0.5"/>
+  <text x="300" y="320" font-family="Arial" font-size="28" text-anchor="middle" fill="#f6e05e">Certificate Preview</text>
+</svg>

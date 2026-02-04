@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FiAward } from "react-icons/fi";
+import { HoverPreview } from "../HoverPreview";
 
 const education = [
     {
@@ -63,26 +64,27 @@ export function Education() {
 
                 <div className="space-y-4 mb-8">
                     {education.map((edu, index) => (
-                        <motion.div
-                            key={edu.institution}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="p-4 bg-card border border-border rounded-lg"
-                        >
-                            <div className="flex flex-wrap justify-between items-start gap-2">
-                                <div>
-                                    <h3 className="font-medium text-foreground">{edu.degree}</h3>
-                                    <p className="text-sm text-accent">{edu.institution}</p>
-                                    <p className="text-xs text-muted-foreground">{edu.location}</p>
+                        <HoverPreview key={edu.institution} mediaSrc="/assets/images/education-placeholder.svg">
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="p-4 bg-card border border-border rounded-lg"
+                            >
+                                <div className="flex flex-wrap justify-between items-start gap-2">
+                                    <div>
+                                        <h3 className="font-medium text-foreground">{edu.degree}</h3>
+                                        <p className="text-sm text-accent">{edu.institution}</p>
+                                        <p className="text-xs text-muted-foreground">{edu.location}</p>
+                                    </div>
+                                    <div className="text-right">
+                                        <p className="text-sm text-muted-foreground">{edu.period}</p>
+                                        <p className="text-sm font-medium text-foreground">GPA: {edu.gpa}</p>
+                                    </div>
                                 </div>
-                                <div className="text-right">
-                                    <p className="text-sm text-muted-foreground">{edu.period}</p>
-                                    <p className="text-sm font-medium text-foreground">GPA: {edu.gpa}</p>
-                                </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        </HoverPreview>
                     ))}
                 </div>
 
@@ -93,22 +95,23 @@ export function Education() {
 
                 <div className="grid gap-3 sm:grid-cols-2">
                     {certifications.map((cert, index) => (
-                        <motion.div
-                            key={cert.name}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: index * 0.05 }}
-                            viewport={{ once: true }}
-                            className={`p-3 rounded-lg border ${cert.highlight
+                        <HoverPreview key={cert.name} mediaSrc="/assets/images/certification-placeholder.svg">
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3, delay: index * 0.05 }}
+                                viewport={{ once: true }}
+                                className={`p-3 rounded-lg border ${cert.highlight
                                     ? "bg-accent/5 border-accent/20"
                                     : "bg-card border-border"
-                                }`}
-                        >
-                            <p className={`text-sm font-medium ${cert.highlight ? "text-accent" : "text-foreground"}`}>
-                                {cert.name}
-                            </p>
-                            <p className="text-xs text-muted-foreground">{cert.issuer}</p>
-                        </motion.div>
+                                    }`}
+                            >
+                                <p className={`text-sm font-medium ${cert.highlight ? "text-accent" : "text-foreground"}`}>
+                                    {cert.name}
+                                </p>
+                                <p className="text-xs text-muted-foreground">{cert.issuer}</p>
+                            </motion.div>
+                        </HoverPreview>
                     ))}
                 </div>
             </motion.div>

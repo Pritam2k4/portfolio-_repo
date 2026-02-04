@@ -37,13 +37,13 @@ export function Contact() {
                     </a>
 
                     <a
-                        href="https://linkedin.com/in/preetam-pujari"
+                        href="https://linkedin.com/in/preetam-naik2k4"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-3 p-3 bg-card border border-border rounded-lg hover:border-accent/50 transition-colors group"
                     >
                         <FiLinkedin className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                        <span className="text-foreground">linkedin.com/in/preetam-pujari</span>
+                        <span className="text-foreground">linkedin.com/in/preetam-naik2k4</span>
                     </a>
                 </div>
 
